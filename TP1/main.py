@@ -49,10 +49,30 @@ def remove_member(crew):
     
     print("Erreur Nom")
 
-def display_member(crew):
+def display_crew(crew):
+    if not crew:
+        print("Equipage est vide.")
+        return
+    
+    for member in crew:
+        print(f"Prénom: {member['first_name']}, Nom: {member['last_name']}, Genre: {member['gender']}, Âge: {member['age']}, Rôle: {member['role']}")
+    print("\n")
+
+def check_crew(crew):
+    if len(crew) < 2:
+        print("Equipage doit contenir au moins 2 membres.")
+        return
+    
+    has_pilot = any(member['role'] == 'pilote' for member in crew)
+    has_technician = any(member['role'] == 'technicien' for member in crew)
+    
+    if has_pilot and has_technician:
+        print("Equipage est prêt pour la mission !")
+    else:
+        print("Equipage doit contenir au moins un pilote et un technicien.")
 
 # Exemple d'utilisation
 if __name__ == "__main__":
     from crew import crew
-    remove_member(crew)
-    print(crew)
+    display_crew(crew)
+    check_crew(crew)
