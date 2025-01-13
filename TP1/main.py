@@ -117,14 +117,14 @@ def random_event(crew):
     if event == "quit":
         member = random.choice(crew)
         crew.remove(member)
-        print(f"Événement aléatoire : {member['first_name']} {member['last_name']} a quitté l'équipage.")
+        print(f"EVENT AUREVOIR : {member['first_name']} {member['last_name']} a quitté l'équipage.")
     elif event == "promote":
         member = random.choice(crew)
         if member["role"] == "technicien" and member["experience"] >= 10 and member["age"] >= 25:
             member["role"] = "pilote"
             print(f"EVENT YOPI : {member['first_name']} {member['last_name']} a été promu au role de pilote.")
         else:
-            print(f"EVENT YOUYPI : Aucun membre n'a été promu")
+            print(f"EVENT DOWNFALL : Aucun membre n'a été promu")
 
 # DISPLAY PART
 def display_menu():
