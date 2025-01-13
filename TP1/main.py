@@ -4,8 +4,8 @@ def get_member_info():
     first_name = input("Prénom du membre d’équipage : ")
     last_name = input("Nom du membre d’équipage : ")
     gender = input("Genre du membre d’équipage : ")
-    age = int(input("Âge du membre d’équipage : "))
-    role = input("Rôle du membre d’équipage ( commandant, pilote, marchant, armurier, entretien, technicien ) : ")
+    age = int(input("Age du membre d’équipage : "))
+    role = input("Role du membre d’équipage ( commandant, pilote, marchant, armurier, entretien, technicien ) : ")
     return {
         "first_name": first_name,
         "last_name": last_name,
@@ -55,7 +55,7 @@ def display_crew(crew):
         return
     
     for member in crew:
-        print(f"Prénom: {member['first_name']}, Nom: {member['last_name']}, Genre: {member['gender']}, Âge: {member['age']}, Rôle: {member['role']}")
+        print(f"Prénom: {member['first_name']}, Nom: {member['last_name']}, Genre: {member['gender']}, Age: {member['age']}, Role: {member['role']}")
     print("\n")
 
 def check_crew(crew):
@@ -67,11 +67,10 @@ def check_crew(crew):
     has_technician = any(member['role'] == 'technicien' for member in crew)
     
     if has_pilot and has_technician:
-        print("Equipage est prêt pour la mission !")
+        print("L’équipage est prêt pour la mission !")
     else:
-        print("Equipage doit contenir au moins un pilote et un technicien.")
+        print("L’équipage doit avoir au moins un pilote et un technicien.")
 
-# Exemple d'utilisation
 if __name__ == "__main__":
     from crew import crew
     display_crew(crew)
