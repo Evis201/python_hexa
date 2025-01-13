@@ -23,7 +23,7 @@ def is_unique_last_name(crew, last_name):
 def is_valid_name(name):
     return 3 <= len(name) <= 15
 
-#
+# CREW PART
 def add_member(crew):
     new_member = get_member_info()
     
@@ -71,12 +71,14 @@ def check_crew(crew):
     else:
         print("L’équipage doit avoir au moins un pilote et un technicien.")
 
+
+# DISPLAY PART
 def display_menu():
     print("\nMenu:")
-    print("1. Afficher l'équipage")
+    print("1. Afficher l'equipage")
     print("2. Ajouter un membre")
     print("3. Supprimer un membre")
-    print("4. Vérifier l'équipage")
+    print("4. Verifier l'equipage")
     print("5. Quitter")
 
 if __name__ == "__main__":
@@ -99,4 +101,4 @@ if __name__ == "__main__":
                 print("Au revoir!")
                 break
             case _:
-                print("Option invalide, veuillez réessayer.")
+                print("BAH NON 6 SA EXISTE PAS.")
