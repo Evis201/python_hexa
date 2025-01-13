@@ -118,6 +118,10 @@ def random_event(crew):
         member = random.choice(crew)
         crew.remove(member)
         print(f"EVENT AUREVOIR : {member['first_name']} {member['last_name']} a quitté l'équipage.")
+    elif event == "fall_ouhhhhhhhhhhhhhh":
+        member = random.choice(crew)
+        crew.remove(member)
+        print(f"EVENT OH NON : {member['first_name']} {member['last_name']} est tombé dans l'espace.")
     elif event == "promote":
         member = random.choice(crew)
         if member["role"] == "technicien" and member["experience"] >= 10 and member["age"] >= 25:
