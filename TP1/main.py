@@ -1,7 +1,7 @@
 # Path: TP1/main.py
 
 def get_member_info():
-    first_name = input("Prénom du membre d’équipage : ")
+    first_name = input("Prenom du membre d’équipage : ")
     last_name = input("Nom du membre d’équipage : ")
     gender = input("Genre du membre d’équipage : ")
     age = int(input("Age du membre d’équipage : "))
@@ -55,7 +55,7 @@ def display_crew(crew):
         return
     
     for member in crew:
-        print(f"Prénom: {member['first_name']}, Nom: {member['last_name']}, Genre: {member['gender']}, Age: {member['age']}, Role: {member['role']}")
+        print(f"Prenom: {member['first_name']}, Nom: {member['last_name']}, Genre: {member['gender']}, Age: {member['age']}, Role: {member['role']}")
     print("\n")
 
 def check_crew(crew):
@@ -71,7 +71,32 @@ def check_crew(crew):
     else:
         print("L’équipage doit avoir au moins un pilote et un technicien.")
 
+def display_menu():
+    print("\nMenu:")
+    print("1. Afficher l'équipage")
+    print("2. Ajouter un membre")
+    print("3. Supprimer un membre")
+    print("4. Vérifier l'équipage")
+    print("5. Quitter")
+
 if __name__ == "__main__":
     from crew import crew
-    display_crew(crew)
-    check_crew(crew)
+    
+    while True:
+        display_menu()
+        choice = input("Choisissez une option : ")
+        
+        match choice:
+            case "1":
+                display_crew(crew)
+            case "2":
+                add_member(crew)
+            case "3":
+                remove_member(crew)
+            case "4":
+                check_crew(crew)
+            case "5":
+                print("Au revoir!")
+                break
+            case _:
+                print("Option invalide, veuillez réessayer.")
