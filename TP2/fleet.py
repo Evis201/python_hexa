@@ -1,30 +1,22 @@
 # Path: TP2/fleet.py
 
-from operator_class import Operator
-
 class Fleet:
     def __init__(self, name):
         self.name = name
         self.spaceships = []
 
-    def get_name(self):
-        return self.name
-
-    def set_name(self, name):
-        self.name = name
-
-    def get_spaceships(self):
-        return self.spaceships
-
-    def set_spaceships(self, spaceships):
-        self.spaceships = spaceships
-
     def append_spaceship(self, spaceship):
-        self.spaceships.append(spaceship)
+        if len(self.spaceships) < 15:
+            self.spaceships.append(spaceship)
+        else:
+            raise ValueError("Limite de 15 vaisseaux atteinte.")
 
     def statistics(self):
+        total_members = sum(len(spaceship.crew) for spaceship in self.spaceships)
+        print(f"Nombre total de membres: {total_members}")
+        roles_count = {}
         for spaceship in self.spaceships:
-            print(f"Vaisseau: {spaceship.name}, Type: {spaceship.type}, État: {spaceship.condition}")
             for member in spaceship.crew:
-                role = member.role if isinstance(member, Operator) else "autre"
-                print(f"  Membre: {member.name}, Rôle: {role}")
+                if isinstance(member, Operator):
+                    roles_count[member.role] = roles_count.get(member.role, 0) + 1
+        print("Répartition des rôles:", roles_count)

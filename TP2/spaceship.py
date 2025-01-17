@@ -1,30 +1,30 @@
 # Path: TP2/spaceship.py
 
-from operator_class import Operator
-
 class Spaceship:
-    def __init__(self, name, type):
+    def __init__(self, name, ship_type, condition="opérationnel"):
         self.name = name
-        self.type = type
+        self.ship_type = ship_type
         self.crew = []
-        self.condition = "Opérationnel"
+        self.condition = condition
 
     def append_member(self, member):
-        if len(self.crew) < 10:
+        if len(self.crew) < 10 and isinstance(member, (Operator, Mentalist)):
             self.crew.append(member)
-            print(f"{member.name} a été ajouté à l'équipage.")
         else:
-            print("Capacité maximale de l'équipage atteinte.")
+            raise ValueError("Le membre ne peut pas être ajouté (limite atteinte ou type incorrect).")
+
+    def remove_member(self, first_name, last_name):
+        for member in self.crew:
+            if member.first_name == first_name and member.last_name == last_name:
+                self.crew.remove(member)
+                return
+        print("Membre non trouvé.")
+
+    def display_crew(self):
+        for member in self.crew:
+            print(member.introduce_yourself())
 
     def check_preparation(self):
-        has_pilot = any(member.role == "pilote" for member in self.crew if isinstance(member, Operator))
-        has_technician = any(member.role == "technicien" for member in self.crew if isinstance(member, Operator))
-        return has_pilot and has_technician and self.condition == "ready"
-
-    def set_condition(self, condition):
-        valid_conditions = ["Opérationnel", "Endommagé", "Détruit"]
-        if condition in valid_conditions:
-            self.condition = condition
-            print(f"L'état du vaisseau est maintenant: {condition}.")
-        else:
-            print(f"Condition invalide: {condition}. Les conditions valides sont: {', '.join(valid_conditions)}.")
+        has_pilot = any(isinstance(member, Operator) and member.role == "pilote" for member in self.crew)
+        has_technician = any(isinstance(member, Operator) and member.role == "technicien" for member in self.crew)
+        return has_pilot and has_technician
