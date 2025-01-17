@@ -33,7 +33,7 @@ class Operator(Member):
             print(f"{self.name} pilote le vaisseau.")
         elif self.role == "technicien":
             print(f"{self.name} répare une partie du vaisseau.")
-        elif self.role == "concierge":
+        elif self.role == "Entretien":
             print(f"{self.name} nettoie les toilettes du vaisseau.")
         else:
             print(f"{self.name} {self.role} le vaisseau.")
