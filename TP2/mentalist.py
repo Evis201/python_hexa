@@ -25,13 +25,7 @@ class Mentalist(Member):
         self.mana = mana
 
     def act(self, operator):
-        if self.mana >= 20:
-            self.mana -= 20
-            operator.act()
-            print(f"{self.name} manipule le membre {operator.name}")
-        else:
-            print(f"{self.name} n'a pas assez de mana pour le manipuler {operator.name}")
+        pass
 
     def recharge_mana(self):
-        self.mana = min(self.mana + 50, 100)
-        print(f"{self.name} a rechargé son mana. Mana actuel: {self.mana}.")
+        self.mana += 10
