@@ -1,4 +1,4 @@
-# Path: TP2/operator.py
+# Path: TP2/operator_class.py
 
 from member import Member
 
