@@ -12,15 +12,14 @@ from mentalist import Mentalist
 
 class FleetApp:
     def __init__(self, root):
-        self.root = root  # Stocke l'objet racine de Tkinter
+        self.root = root  # Pas toucher sinon tkinder va pas être content
         self.root.title("Gestion de la Flotte")
         self.fleet = None
         self.spaceships = {}
 
-        # Charger les données JSON
         self.load_data()
 
-        # Interface principale
+        # MAIN INTERFACE :)
         self.create_widgets()
 
     def load_data(self):
@@ -33,13 +32,11 @@ class FleetApp:
 
             self.fleet = Fleet(fleet_data["Nom"])
 
-            # Création des vaisseaux et de l'équipage
             for ship_data in ships_data:
                 ship = Spaceship(ship_data["Nom"], ship_data["Type"], ship_data["Etat"])
                 self.fleet.append_spaceship(ship)
                 self.spaceships[ship_data["Nom"]] = ship
 
-                # Ajouter les membres d'équipage
                 for crew_member in ship_data["Equipage"]:
                     name_parts = crew_member["Nom"].split()
                     first_name = name_parts[0]
@@ -181,7 +178,7 @@ class FleetApp:
                     ship.remove_member(member)
                     messagebox.showinfo("Succès", f"{full_name} a été supprimé de l'équipage du vaisseau {ship_name}.")
                 else:
-                    messagebox.showerror("Erreur", "Membre non trouvé.")
+                    messagebox.showerror("Erreur", "Membre non trouvé")
         else:
             messagebox.showerror("Erreur", "Veuillez sélectionner un vaisseau.")
 
