@@ -1,80 +1,205 @@
 {
-  "Fondation": {
     "Flotte": {
-      "Nom": "Galactica",
-      "NombreDeVaisseaux": 5,
-      "Commandant": "Bel Riose",
-      "Vaisseaux": [
-        {
-          "Nom": "Bayta",
-          "Type": "Marchand",
-          "Equipage": 4,
-          "Etat": "Opérationnel"
-        },
-        {
-          "Nom": "Dark Nebula",
-          "Type": "Guerre",
-          "Equipage": 5,
-          "Etat": "Endommagé"
-        },
-        {
-          "Nom": "Fearless",
-          "Type": "Guerre",
-          "Equipage": 5,
-          "Etat": "Opérationnel"
-        },
-        {
-          "Nom": "Unimara",
-          "Type": "Marchand",
-          "Equipage": 5,
-          "Etat": "Opérationnel"
-        },
-        {
-          "Nom": "Weinis",
-          "Type": "Marchand",
-          "Equipage": 4,
-          "Etat": "Endommagé"
-        }
-      ]
+        "Nom": "Galactica",
+        "Nombre de vaisseaux": 5,
+        "Commandant": "Bel Riose"
     },
-    "MembresEquipage": {
-      "Types": ["Opérateur", "Mentalistes"],
-      "Métiers": [
-        "Commandant",
-        "Pilote",
-        "Marchand",
-        "Armurier",
-        "Entretien",
-        "Technicien"
-      ],
-      "Opérateurs": [
-        {"Nom": "Bel Riose", "Sexe": "M", "Age": 48, "Métier": "Commandant"},
-        {"Nom": "Gaal Dornick", "Sexe": "F", "Age": 34, "Métier": "Technicien"},
-        {"Nom": "Salvor Hardin", "Sexe": "F", "Age": 28, "Métier": "Armurier"},
-        {"Nom": "Hugo Crast", "Sexe": "M", "Age": 37, "Métier": "Pilote"},
-        {"Nom": "Jagger Fount", "Sexe": "M", "Age": 41, "Métier": "Pilote"},
-        {"Nom": "Hober Mallow", "Sexe": "M", "Age": 52, "Métier": "Pilote"},
-        {"Nom": "Lathan Devers", "Sexe": "M", "Age": 46, "Métier": "Marchand"},
-        {"Nom": "Limmar Ponyets", "Sexe": "M", "Age": 43, "Métier": "Marchand"},
-        {"Nom": "Novi Sura", "Sexe": "F", "Age": 25, "Métier": "Entretien"},
-        {"Nom": "Ebling Mis", "Sexe": "M", "Age": 34, "Métier": "Entretien"},
-        {"Nom": "Eskel Gorov", "Sexe": "M", "Age": 32, "Métier": "Marchand"},
-        {"Nom": "Fallom", "Sexe": "F", "Age": 28, "Métier": "Pilote"},
-        {"Nom": "Han Pritcher", "Sexe": "M", "Age": 31, "Métier": "Armurier"},
-        {"Nom": "Harlan Branno", "Sexe": "F", "Age": 38, "Métier": "Entretien"},
-        {"Nom": "Lewis Pirenne", "Sexe": "H", "Age": 34, "Métier": "Pilote"},
-        {"Nom": "Munn Compor", "Sexe": "M", "Age": 27, "Métier": "Technicien"},
-        {"Nom": "Yugo Amary", "Sexe": "M", "Age": 33, "Métier": "Technicien"},
-        {"Nom": "Bayta Darell", "Sexe": "F", "Age": 48, "Métier": "Entretien"},
-        {"Nom": "Toran Darell", "Sexe": "M", "Age": 52, "Métier": "Technicien"},
-        {"Nom": "Stora Gendibal", "Sexe": "F", "Age": 35, "Métier": "Technicien"},
-        {"Nom": "Jord Commasson", "Sexe": "M", "Age": 53, "Métier": "Entretien"}
-      ],
-      "Mentalistes": [
-        {"Nom": "Tellem Bond", "Sexe": "M", "Age": 48, "Mana": 100},
-        {"Nom": "Yanna Seldon", "Sexe": "F", "Age": 52, "Mana": 100},
-        {"Nom": "Joie", "Sexe": "F", "Age": 25, "Mana": 100}
-      ]
-    }
-  }
+    "Vaisseaux": [
+        {
+            "Nom": "Bayta",
+            "Type": "Marchand",
+            "Etat": "Opérationnel",
+            "Equipage": [
+                {
+                    "Type": "operator",
+                    "Nom": "Gaal Dornick",
+                    "Sexe": "Femme",
+                    "Age": 34,
+                    "Metier": "Technicien"
+                },
+                {
+                    "Type": "operator",
+                    "Nom": "Salvor Hardin",
+                    "Sexe": "Femme",
+                    "Age": 28,
+                    "Metier": "Armurier"
+                },
+                {
+                    "Type": "operator",
+                    "Nom": "Hugo Crast",
+                    "Sexe": "Homme",
+                    "Age": 37,
+                    "Metier": "Pilote"
+                },
+                {
+                    "Type": "operator",
+                    "Nom": "Lathan Devers",
+                    "Sexe": "Homme",
+                    "Age": 46,
+                    "Metier": "Marchand"
+                }
+            ]
+        },
+        {
+            "Nom": "Dark Nebula",
+            "Type": "Guerre",
+            "Etat": "Endommagé",
+            "Equipage": [
+                {
+                    "Type": "operator",
+                    "Nom": "Jagger Fount",
+                    "Sexe": "Homme",
+                    "Age": 41,
+                    "Metier": "Pilote"
+                },
+                {
+                    "Type": "operator",
+                    "Nom": "Hober Mallow",
+                    "Sexe": "Homme",
+                    "Age": 52,
+                    "Metier": "Pilote"
+                },
+                {
+                    "Type": "operator",
+                    "Nom": "Limmar Ponyets",
+                    "Sexe": "Homme",
+                    "Age": 43,
+                    "Metier": "Marchand"
+                },
+                {
+                    "Type": "operator",
+                    "Nom": "Novi Sura",
+                    "Sexe": "Femme",
+                    "Age": 25,
+                    "Metier": "Entretien"
+                },
+                {
+                    "Type": "mentalist",
+                    "Nom": "Tellem Bond",
+                    "Sexe": "Homme",
+                    "Age": 48,
+                    "Mana": 100
+                }
+            ]
+        },
+        {
+            "Nom": "Fearless",
+            "Type": "Guerre",
+            "Etat": "Opérationnel",
+            "Equipage": [
+                {
+                    "Type": "operator",
+                    "Nom": "Fallom",
+                    "Sexe": "Femme",
+                    "Age": 28,
+                    "Metier": "Pilote"
+                },
+                {
+                    "Type": "operator",
+                    "Nom": "Han Pritcher",
+                    "Sexe": "Homme",
+                    "Age": 31,
+                    "Metier": "Armurier"
+                },
+                {
+                    "Type": "operator",
+                    "Nom": "Harlan Branno",
+                    "Sexe": "Femme",
+                    "Age": 38,
+                    "Metier": "Entretien"
+                },
+                {
+                    "Type": "operator",
+                    "Nom": "Lewis Pirenne",
+                    "Sexe": "Homme",
+                    "Age": 34,
+                    "Metier": "Pilote"
+                },
+                {
+                    "Type": "mentalist",
+                    "Nom": "Yanna Seldon",
+                    "Sexe": "Femme",
+                    "Age": 52,
+                    "Mana": 100
+                }
+            ]
+        },
+        {
+            "Nom": "Unimara",
+            "Type": "Marchand",
+            "Etat": "Opérationnel",
+            "Equipage": [
+                {
+                    "Type": "operator",
+                    "Nom": "Eskel Gorov",
+                    "Sexe": "Homme",
+                    "Age": 32,
+                    "Metier": "Marchand"
+                },
+                {
+                    "Type": "operator",
+                    "Nom": "Bayta Darell",
+                    "Sexe": "Femme",
+                    "Age": 48,
+                    "Metier": "Entretien"
+                },
+                {
+                    "Type": "operator",
+                    "Nom": "Toran Darell",
+                    "Sexe": "Homme",
+                    "Age": 52,
+                    "Metier": "Technicien"
+                },
+                {
+                    "Type": "operator",
+                    "Nom": "Stora Gendibal",
+                    "Sexe": "Femme",
+                    "Age": 35,
+                    "Metier": "Technicien"
+                },
+                {
+                    "Type": "mentalist",
+                    "Nom": "Joie",
+                    "Sexe": "Femme",
+                    "Age": 25,
+                    "Mana": 100
+                }
+            ]
+        },
+        {
+            "Nom": "Weinis",
+            "Type": "Marchand",
+            "Etat": "Endommagé",
+            "Equipage": [
+                {
+                    "Type": "operator",
+                    "Nom": "Jord Commasson",
+                    "Sexe": "Homme",
+                    "Age": 53,
+                    "Metier": "Entretien"
+                },
+                {
+                    "Type": "operator",
+                    "Nom": "Ebling Mis",
+                    "Sexe": "Homme",
+                    "Age": 34,
+                    "Metier": "Entretien"
+                },
+                {
+                    "Type": "operator",
+                    "Nom": "Munn Compor",
+                    "Sexe": "Homme",
+                    "Age": 27,
+                    "Metier": "Technicien"
+                },
+                {
+                    "Type": "operator",
+                    "Nom": "Yugo Amary",
+                    "Sexe": "Homme",
+                    "Age": 33,
+                    "Metier": "Technicien"
+                }
+            ]
+        }
+    ]
 }

@@ -2,35 +2,36 @@
 
 class Member:
     def __init__(self, first_name, last_name, gender, age):
-        self.first_name = first_name
-        self.last_name = last_name
-        self.gender = gender
-        self.age = age
+        self._first_name = first_name
+        self._last_name = last_name
+        self._gender = gender
+        self._age = age
 
-    def introduce_yourself(self):
-        return f"Je m'appelle {self.first_name} {self.last_name}, je suis un(e) {self.gender.lower()} de {self.age} ans."
-
-    # Getters and Setters
+    # Getters
     def get_first_name(self):
-        return self.first_name
-
-    def set_first_name(self, first_name):
-        self.first_name = first_name
+        return self._first_name
 
     def get_last_name(self):
-        return self.last_name
-
-    def set_last_name(self, last_name):
-        self.last_name = last_name
+        return self._last_name
 
     def get_gender(self):
-        return self.gender
-
-    def set_gender(self, gender):
-        self.gender = gender
+        return self._gender
 
     def get_age(self):
-        return self.age
+        return self._age
+
+    # Set
+    def set_first_name(self, first_name):
+        self._first_name = first_name
+
+    def set_last_name(self, last_name):
+        self._last_name = last_name
+
+    def set_gender(self, gender):
+        self._gender = gender
 
     def set_age(self, age):
-        self.age = age
+        self._age = age
+
+    def introduce_yourself(self):
+        return f"Je m'appelle {self._first_name} {self._last_name}, je suis un(e) {self._gender} de {self._age} ans."

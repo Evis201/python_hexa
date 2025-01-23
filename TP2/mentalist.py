@@ -1,23 +1,25 @@
 # Path: TP2/mentalist.py
 
+from member import Member
+
 class Mentalist(Member):
-    def __init__(self, first_name, last_name, gender, age, mana=100):
+    def __init__(self, first_name, last_name, gender, age):
         super().__init__(first_name, last_name, gender, age)
-        self.mana = mana
+        self._mana = 100
+
+    # Getters
+    def get_mana(self):
+        return self._mana
+
+    # Setters
+    def set_mana(self, mana):
+        self._mana = mana
 
     def act(self, operator):
-        if self.mana >= 20:
-            self.mana -= 20
-            return f"{self.first_name} {self.last_name} influence {operator.first_name} {operator.last_name}."
-        else:
-            return f"{self.first_name} {self.last_name} n'a pas assez de mana pour agir."
+        if self._mana >= 20:
+            self._mana -= 20
+            return operator.act()
+        return f"{self.get_first_name()} n'a pas assez de mana pour influencer l'opérateur."
 
     def recharge_mana(self):
-        self.mana = min(self.mana + 50, 100)
-
-    # Getters and Setters
-    def get_mana(self):
-        return self.mana
-
-    def set_mana(self, mana):
-        self.mana = mana
+        self._mana = min(self._mana + 50, 100)

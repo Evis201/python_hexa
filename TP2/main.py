@@ -1,33 +1,26 @@
 # Path: TP2/main.py
 
 import json
-from member import Member
-from operator import Operator
+from operator_class import Operator
 from mentalist import Mentalist
 from spaceship import Spaceship
 from fleet import Fleet
 
-with open('default.json', 'r') as file:
-    data = json.load(file)
+# Charger les données JSON
+with open("default.json", "r") as f:
+    data = json.load(f)
 
-if __name__ == "__main__":
-    # Créer une flotte
-    fleet = Fleet("Galactica")
+# Initialisation de la flotte
+fleet_data = data["Fondation"]["Flotte"]
+members_data = data["Fondation"]["MembresEquipage"]
 
-    # Créer des vaisseaux
-    spaceship1 = Spaceship("Bayta", "Marchand")
-    spaceship2 = Spaceship("Dark Nebula", "Guerre", "Endommagé")
+fleet = Fleet(fleet_data["Nom"])
 
-    # Ajouter des membres d'équipage
-    op1 = Operator("Gaal", "Dornick", "Femme", 34, "technicien")
-    ment1 = Mentalist("Joie", "", "Femme", 25)
+# Création des vaisseaux
+for ship_data in fleet_data["Vaisseaux"]:
+    ship = Spaceship(ship_data["Nom"], ship_data["Type"], ship_data["Etat"])
+    fleet.append_spaceship(ship)
 
-    spaceship1.append_member(op1)
-    spaceship2.append_member(ment1)
-
-    # Ajouter des vaisseaux à la flotte
-    fleet.append_spaceship(spaceship1)
-    fleet.append_spaceship(spaceship2)
-
-    # Afficher les statistiques
-    fleet.statistics()
+# Affichage des statistiques de la flotte
+print(f"Flotte: {fleet.get_name()}")
+print("Statistiques:", fleet.statistics())
